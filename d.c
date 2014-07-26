@@ -1,72 +1,69 @@
+#include<iostream>
+using namespace std;
+#define max 5
 
- #include<stdio.h>
+int top=-1;
+int a[max];
+
+
+
+
+
+
+
+
+
+void push(int n)
+{
+     a[++top]=n;
+     
+}
+
+
+void pop(int *n)
+{
+     
+          *n=a[top];//Returns the value that is to be deleted
+          top--;
+        
+     
+     
+}
+
+
 int main()
 {
-    unsigned long long ans,n,a=1,m,a=1,mod_arr[30]={2};int i;
-   
+     
+     
+   char n[5]; int pos,m,si,i,j,k,temp;
+    
+    cin>>n>>k;
+  
+   for(i=0;n[i]!='\0';i++)
+         push(n[i]-48);
+  
+    si=i;
+ 
+   m=a[0];
+   for(i=0;i<si-1;i++)
+     { 
+               if(a[i]>=m)
+                 {        
+                          pos=i;}
+     }
 
-    for( i=1;i<30;i++)
-    {
-        mod_arr[i]=(mod_arr[i-1]*mod_arr[i-1])%100000007;
-    }
+if(si-k == 1) cout<< a[si-1];
 
-   for(i=0;i<30;i++)
-         printf("%llu\n",mod_arr[i]);
-   
-   while(scanf("%llu",&n)!=EOF)
-    {
-    a=1;
-    if(n%1000000006==0&&n!=0)
-    {
-        printf("1\n");
-    }
-    else
-    {
-    n=n%1000000006;
-    while(n>1)
-    {
-              int c=0;
-               m=n;
-           a=1;
-                        while(m>1)
-                               {
-                                m/=2;
-                                     a*=2;
-                                  c++;
-                               }
-        n=n-a;
-        a=(a*mod_arr[c])%1000000007;
-    }
-    if(n==1)
-    {
-   n=n%1000000006;
-    while(n>1)
-    {    
-        int c=0;
-        m=n;
-        a=1;
-        while(m>1)
-                {
-                    m/=2;
-                  a*=2;
-                  c++;
-        }
-        n=n-a;
-        a=(a*mod_arr[c])%1000000007;
-    }
-    if(n==1)
-    {
-        a=(a*2)%1000000007;
-        a=(a-2)%1000000007;
-    }
-    else
-    {
-        a=(a-1)%1000000007;
-    }
-    a=(a*333333336)%1000000007;
-    a++;
-    printf("%llu\n",a);
-    }
-    }
-    return 0;
+else
+  
+
+         for(i=pos;i<pos+(si-k);i++)
+            {
+                      cout<<a[i];
+       }
 }
+                 
+       
+
+   
+
