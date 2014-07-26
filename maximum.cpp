@@ -1,9 +1,9 @@
 #include<iostream>
 using namespace std;
+#define max 5
 
-int top;
-int **a;
-int ti;
+int top=-1;
+int a[max];
 
 
 
@@ -15,63 +15,53 @@ int ti;
 
 void push(int n)
 {
-     a[ti][++top]=n;
+     a[++top]=n;
      
 }
 
+
+void pop(int *n)
+{
+     
+          *n=a[top];//Returns the value that is to be deleted
+          top--;
+        
+     
+     
+}
 
 
 int main()
 {
      
-     int t;
-    cin>>t;
-
- a = new int *[t]; 
-for (int count = 0; count < t; count++)
-{
-   a[count] = new int[5];
-}
+     
+   char n[5]; int pos,m,si,i,j,k,temp;
+    
+    cin>>n>>k;
   
-     char n[t][5]; int pos[t],m[t],si[t],i,j,k[t],temp;
-   for(ti=0;ti<t;ti++)
- {       
-  top=-1;
-   
-    cin>>n[ti]>>k[ti]; 
+   for(i=0;n[i]!='\0';i++)
+         push(n[i]-48);
   
-   for(i=0;n[ti][i]!='\0';i++)
-         push(n[ti][i]-48);
-  
-    si[ti]=i;
+    si=i;
  
-   m[ti]=a[ti][0];
-   for(i=0;i<si[ti]-1;i++)
+   m=a[0];
+   for(i=0;i<si-1;i++)
      { 
-               if(a[ti][i]>=m[ti])
+               if(a[i]>=m)
                  {        
-                          pos[ti]=i;}
+                          pos=i;}
      }
 
-
-}
-
-for(ti=0;ti<t;ti++)
-{
-if(si[ti]-k[ti] == 2) {cout<< a[ti][pos[ti]];cout<<endl;}
+if(si-k == 1) cout<< a[si-1];
 
 else
   
-{
-         for(i=pos[ti];i<pos[ti]+(si[ti]-k[ti]);i++)
+
+         for(i=pos;i<pos+(si-k);i++)
             {
-                      cout<<a[ti][i];
+                      cout<<a[i];
        }
-  
-cout<<endl;
 }
-}
- }                
-       
+                  
 
    
